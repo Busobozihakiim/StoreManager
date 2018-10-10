@@ -1,2 +1,2 @@
 # StoreManager
-Store Manager Web App
+A Single Store Manager Web Application that helps store owners manage sales and product inventory records
