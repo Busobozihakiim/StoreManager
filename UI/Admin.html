@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Page</title>
+        <link a href="Admin.css" rel="stylesheet" type="text/css" media="screen"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Page that contains Admin Content">
+        <meta name ="Author" content="Busobozihakiim" >
+        <meta charset="UTF-8">  
+    </head>
+    <body>
+        <ul> 
+            <li style="float:right"><a href="#logout">Logout</a></li>
+        </ul>
+        <br>
+        <br>
+        <br>
+               
+        <main>
+            <div class="tab">
+                <button class="tablinks" onclick="openSelectedTab(event, 'PRODUCTS')" id="defaultOpen">PRODUCTS</button>
+                <button class="tablinks" onclick="openSelectedTab(event, 'SALES')">SALES</button>
+                <button class="tablinks" onclick="openSelectedTab(event, 'ACCOUNTS')">ACCOUNTS</button>
+            </div>
+        
+            <div id="PRODUCTS" class="tabcontent">
+                <h3>PRODUCTS</h3>
+                <p>Product checkout to happen here</p>
+            </div>
+        
+            <div id="SALES" class="tabcontent">
+                <h3>SALES</h3>
+                <p>Table showing sale of each item</p> 
+            </div>
+        
+            <div id="ACCOUNTS" class="tabcontent">
+                <h3>ACCOUNTS</h3>
+                <p>Admin has Account Super powers over here</p>
+            </div>
+        </main>
+        
+        <script>
+            function openSelectedTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                // Makes it possible to click on a button display="block" its content
+                // and not display="none" content in other tabs
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                // enables only the clicked button to become highlighted 
+                //by adding the "active" class on the selected button
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                //shows content in the selected tab through getting element by id="tabName"
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>        
+    </body>
+</html>
