@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 5px;
+    box-sizing: border-box;
 }
 
 /* Style of the Same background*/
@@ -12,8 +13,6 @@ body{
 /* Style the nav bar */
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     background-color: #333;
 }
@@ -75,4 +74,53 @@ main{
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+/* Table for sales listing begins here */
+/* Style the table */
+table {
+    overflow-x:auto;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+/* Style the th and data */
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+/* Style hover over rows*/
+tr:hover {background-color: #f5f5f5}
+tr:nth-child(even){background-color: #f2f2f2}
+
+
+.row{
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    font-family: 'Open Sans Condensed', sans-serif;
+    flex-flow: row wrap;
+
+}
+/* Style for Product listing begins here */
+/* Style for the product listing */
+.card {
+    box-shadow: 1px 5px 15px #CCC;
+    width: 15em;
+    height: auto;
+    border-radius: 3px;
+    padding: 2em;
+    margin: 1em;
+    overflow: hidden;
+    position: relative;
+    flex: auto;
+}
+/* Style for image of product */
+.card img{
+    max-width: 100%;
+    height: auto !important;
+    text-align: center;
+}
+/* Style for card when hovered over*/
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
