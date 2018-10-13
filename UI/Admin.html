@@ -8,7 +8,7 @@
         <meta name ="Author" content="Busobozihakiim" >
         <meta charset="UTF-8">  
     </head>
-    <body style="background:url(images/Sunset.jpg)">
+    <body style="background:url(images/Sunset.jpg);background-size: cover">
         <ul> 
             <li style="float:right"><a href="#logout">Logout</a></li>
         </ul>
@@ -89,7 +89,7 @@
             </div>
         
             <div id="SALES" class="tabcontent">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter Store Attendants ..">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter Attendants">
 
                 <div id="myTable">
                     <table>
@@ -146,9 +146,17 @@
                 </div> 
             </div>
         
-            <div id="ACCOUNTS" class="tabcontent">
-                <h3>ACCOUNTS</h3>
-                <p>Admin has Account Super powers over here</p>
+            <div id="ACCOUNTS" class="tabcontent login">
+                        <h1>Register Accounts</h1>
+                        <form>
+                            <label for="email">Email</label>
+                            <input type="username" placeholder="user@mail.com">
+                            <label for="username">Username</label>
+                            <input type="username" placeholder="Username.."/>
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="password.."/>
+                            <input type="button" value="REGISTER" />
+                        </form>
             </div>
         </main>
         
@@ -174,27 +182,27 @@
         
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
-
+                
             function myFunction() {
-            // Declaring  variables 
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
+                // Declaring  variables 
+                var input, filter, table, tr, td, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
 
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            // found a match
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
-                    } 
-                }
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                // found a match
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                        } 
+                    }
             }
         </script>        
     </body>
