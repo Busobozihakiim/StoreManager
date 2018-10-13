@@ -6,7 +6,6 @@
 
 /* Style of the Same background*/
 body{
-    background:url(Aqua\ Splash.png);
     height:100%;
 }
 
@@ -74,6 +73,8 @@ main{
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    background: #ffffff;
+
 }
 /* Table for sales listing begins here */
 /* Style the table */
@@ -145,4 +146,13 @@ img {
 }
 .container{
     padding: 2px 16px;
+}
+
+/*style for search box for filtering attendants names*/
+#myInput {
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
 }

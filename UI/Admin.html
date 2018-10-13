@@ -2,13 +2,13 @@
 <html>
     <head>
         <title>Admin Page</title>
-        <link a href="Admin.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link a href="css/Admin.css" rel="stylesheet" type="text/css" media="screen"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="The Page that contains Admin Content">
         <meta name ="Author" content="Busobozihakiim" >
         <meta charset="UTF-8">  
     </head>
-    <body>
+    <body style="background:url(images/Sunset.jpg)">
         <ul> 
             <li style="float:right"><a href="#logout">Logout</a></li>
         </ul>
@@ -16,7 +16,7 @@
         <br>
         <br>
                
-        <main>
+        <main style="background:url(images/Aqua\ Splash.png);background-repeat:no-repeat; background-attachment:fixed; background-size:cover; ">
             <div class="tab">
                 <button class="tablinks" onclick="openSelectedTab(event, 'PRODUCTS')" id="defaultOpen">PRODUCTS</button>
                 <button class="tablinks" onclick="openSelectedTab(event, 'SALES')">SALES</button>
@@ -24,13 +24,126 @@
             </div>
         
             <div id="PRODUCTS" class="tabcontent">
-                <h3>PRODUCTS</h3>
-                <p>Product checkout to happen here</p>
+                <!-- <h3>PRODUCTS</h3>
+                <p>Available Products</p>-->
+                
+                <div class="row">
+                    <div class="card">
+                        <img src="images/router.jpg" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>Routers</b></h4> 
+                                <p>Quantity:5</p>
+                                <p>Price:750,000/=</p> 
+                            </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/cat6.jpg" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>Ethernet cables</b></h4> 
+                                    <p>Quantity:1.5m</p>
+                                    <p>Price:50,000/=</p> 
+                            </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/harddisk.png" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>Hard disks</b></h4> 
+                                    <p>Quantity:5</p>
+                                    <p>Price:50,000/=</p> 
+                            </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/mouse.jpg" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>mice</b></h4> 
+                                    <p>Quantity:5</p>
+                                    <p>Price:25,000/=</p> 
+                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="product-image"></div>
+                        <img src="images/desktop.jpg" alt="Avatar" style="width:100%">
+                            <div class="product-info">
+                                <h4><b>Desktop</b></h4> 
+                                    <p>Quantity:1</p>
+                                    <p>Price:550,000/=</p> 
+                            </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/printer.png" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>Printer</b></h4> 
+                                    <p>Quantity:1</p>
+                                    <p>Price:175,000/=</p> 
+                            </div>
+                    </div>
+                    <div class="card">
+                            <img src="images/laptop.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>Laptop</b></h4> 
+                                        <p>Quantity:1</p>
+                                        <p>Price:3,375,000/=</p> 
+                                </div>
+                    </div>
+                </div>
             </div>
         
             <div id="SALES" class="tabcontent">
-                <h3>SALES</h3>
-                <p>Table showing sale of each item</p> 
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter Store Attendants ..">
+
+                <div id="myTable">
+                    <table>
+                        <tr>
+                            <th>Store Attendant</th>
+                            <th>Image</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>James </td>
+                            <td><img src="images/harddisk.png" class="table_images"></td>
+                            <td>harddisk</td>
+                            <td>2</td>
+                            <td>500,000/=</td>
+                        </tr>
+                        <tr>
+                            <td>Sam</td>
+                            <td><img src="images/cat6.jpg" class="table_images"></td>
+                            <td>Ethernet Cable</td>
+                            <td>1</td>
+                            <td>350,000/=</td>
+                        </tr>
+                        <tr>
+                            <td>cornie</td>
+                            <td><img src="images/router.jpg" class="table_images"></td>
+                            <td>Routers</td>
+                            <td>1</td>
+                            <td>650,000/=</td>
+                        </tr>
+                        <tr>
+                            <td>kimberly</td>
+                            <td><img src="images/printer.png" class="table_images"></td>
+                            <td>Printers</td>
+                            <td>3</td>
+                            <td>450,000/=</td>
+                        </tr>
+                        <tr>
+                            <td>Sepiol</td>
+                            <td><img src="images/desktop.jpg" class="table_images"></td>
+                            <td>Desktop</td>
+                            <td>1</td>
+                            <td>1,200,000/=</td>
+                        </tr>
+                        <tr>
+                            <td>Irving</td>
+                            <td><img src="images/cat6.jpg" class="table_images"></td>
+                            <td>Ethernet</td>
+                            <td>1</td>
+                            <td>350,000/=</td>
+                        </tr>
+                    </table>    
+                </div> 
             </div>
         
             <div id="ACCOUNTS" class="tabcontent">
@@ -61,6 +174,28 @@
         
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
+
+            function myFunction() {
+            // Declaring  variables 
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            // found a match
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    } 
+                }
+            }
         </script>        
     </body>
 </html>
