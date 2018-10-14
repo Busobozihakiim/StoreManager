@@ -7,7 +7,6 @@
 /* Style of the Same background*/
 body{
     height:100%;
-    background-size: cover;
 }
 
 /* Style the nav bar */
@@ -135,7 +134,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 /* Style for image of product */
 .card img{
     max-width: 100%;
-    height: auto !important;
+    height: 65%;
     text-align: center;
 }
 /* Style for card when hovered over*/
@@ -145,10 +144,6 @@ tr:nth-child(even){background-color: #f2f2f2}
 img {
     border-radius: 5px 5px 0 0;
 }
-.container{
-    padding: 2px 16px;
-}
-
 /*style for search box for filtering attendants names*/
 #myInput {
     width: 100%; /* Full-width */
@@ -170,12 +165,12 @@ img {
     
 }
 form {
-    background: #f0f0f0;
+    background: #ffffff;
     padding: 6% 4%;
 }
-input[type="Username"], input[type="password"] {
+input[type="name"], input[type="password"], input[type="file"] {
     width: 100%;
-    background: #fff;
+    background: #eaf8fb;
     margin: 5px 0 22px 0;
     border: 1px solid #ccc;
     padding: 2%;
@@ -192,4 +187,45 @@ input[type="button"] {
     color: #fff;
     cursor: pointer;
     transition: background .3s;
+}
+#editBtn{
+    background: #4dd6b0;
+}
+#deleteBtn{
+    float: right;
+    background: #d82c2c; 
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #3399cc;
 }

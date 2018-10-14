@@ -26,6 +26,25 @@
             <div id="PRODUCTS" class="tabcontent">
                 <!-- <h3>PRODUCTS</h3>
                 <p>Available Products</p>-->
+                <div class="row">
+                    <input type="button" value="Add Product" id="editBtn" onclick="openProductModal()">
+                </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                            <div class="modal-header">
+                                <h1>Add New Product</h1>
+                            </div>
+                    <form>
+                        <label for="Product">Product</label>
+                        <input type="name" placeholder="Product name..">
+                        <label for="Price">Price</label>
+                        <input type="name" placeholder="price.."/>
+                        <label for="password">Image</label>
+                        <input type="file" placeholder="select image.."/>
+                        <input type="button" value="Add " id="editBtn" onclick="closeTheModal()"/>
+                    </form> 
+                    </div>   
+                </div>
                 
                 <div class="row">
                     <div class="card">
@@ -33,8 +52,10 @@
                             <div class="container">
                                 <h4><b>Routers</b></h4> 
                                 <p>Quantity:5</p>
-                                <p>Price:750,000/=</p> 
+                                <p>Price:750,000/=</p>                                
                             </div>
+                            <input type="button" value="Edit" id="editBtn">
+                            <input type="button" value="delete" id="deleteBtn" >    
                     </div>
                     <div class="card">
                         <img src="images/cat6.jpg" alt="Avatar" style="width:100%">
@@ -43,6 +64,8 @@
                                     <p>Quantity:1.5m</p>
                                     <p>Price:50,000/=</p> 
                             </div>
+                            <input type="button" value="Edit" id="editBtn">
+                            <input type="button" value="delete" id="deleteBtn"> 
                     </div>
                     <div class="card">
                         <img src="images/harddisk.png" alt="Avatar" style="width:100%">
@@ -51,6 +74,8 @@
                                     <p>Quantity:5</p>
                                     <p>Price:50,000/=</p> 
                             </div>
+                            <input type="button" value="Edit" id="editBtn">
+                            <input type="button" value="delete" id="deleteBtn">    
                     </div>
                     <div class="card">
                         <img src="images/mouse.jpg" alt="Avatar" style="width:100%">
@@ -59,6 +84,8 @@
                                     <p>Quantity:5</p>
                                     <p>Price:25,000/=</p> 
                             </div>
+                            <input type="button" value="Edit" id="editBtn">
+                            <input type="button" value="delete" id="deleteBtn">                            
                     </div>
                     <div class="card">
                         <div class="product-image"></div>
@@ -68,6 +95,8 @@
                                     <p>Quantity:1</p>
                                     <p>Price:550,000/=</p> 
                             </div>
+                            <input type="button" value="Edit" id="editBtn">
+                            <input type="button" value="delete" id="deleteBtn"> 
                     </div>
                     <div class="card">
                         <img src="images/printer.png" alt="Avatar" style="width:100%">
@@ -76,6 +105,8 @@
                                     <p>Quantity:1</p>
                                     <p>Price:175,000/=</p> 
                             </div>
+                            <input type="button" value="Edit" id="editBtn">
+                            <input type="button" value="delete" id="deleteBtn">        
                     </div>
                     <div class="card">
                             <img src="images/laptop.jpg" alt="Avatar" style="width:100%">
@@ -84,6 +115,8 @@
                                         <p>Quantity:1</p>
                                         <p>Price:3,375,000/=</p> 
                                 </div>
+                                <input type="button" value="Edit" id="editBtn">
+                                <input type="button" value="delete" id="deleteBtn">                    
                     </div>
                 </div>
             </div>
@@ -150,9 +183,9 @@
                         <h1>Register Accounts</h1>
                         <form>
                             <label for="email">Email</label>
-                            <input type="username" placeholder="user@mail.com">
+                            <input type="name" placeholder="user@mail.com">
                             <label for="username">Username</label>
-                            <input type="username" placeholder="Username.."/>
+                            <input type="name" placeholder="Username.."/>
                             <label for="password">Password</label>
                             <input type="password" placeholder="password.."/>
                             <input type="button" value="REGISTER" />
@@ -161,6 +194,7 @@
         </main>
         
         <script>
+            // function to display the selected tab
             function openSelectedTab(evt, tabName) {
                 var i, tabcontent, tablinks;
                 // Makes it possible to click on a button display="block" its content
@@ -182,7 +216,8 @@
         
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
-                
+
+            // function for filtering sales records by attendats
             function myFunction() {
                 // Declaring  variables 
                 var input, filter, table, tr, td, i;
@@ -194,7 +229,7 @@
                 // Loop through all table rows, and hide those who don't match the search query
                 for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[0];
-                // found a match
+                // found an attendat  match
                 if (td) {
                     if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
@@ -204,6 +239,30 @@
                         } 
                     }
             }
-        </script>        
+            
+        </script>  
+        <!-- display modal for adding a product-->
+        <script>
+            var modal = document.getElementById('myModal');
+            var btn = document.getElementById("editBtn");
+            var closeButton= document.getElementsByClassName("close")[1];
+
+            // When admin clicks the button, open the modal 
+            function openProductModal() {
+                modal.style.display = "block";
+            }
+            
+            // When admin adds a product ,close the modal
+            function closeTheModal() {
+                modal.style.display = "none";
+            }
+            
+            // When the admin clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>      
     </body>
 </html>
