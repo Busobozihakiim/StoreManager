@@ -8,29 +8,91 @@
         <meta name ="Author" content="Busobozihakiim" >
         <meta charset="UTF-8">  
     </head>
-    <body style="background:url(images/Sunset.jpg)">
-        <ul> 
-            <li style="float:right"><a href="#logout">Logout</a></li>
-        </ul>
+    <body style="background:url(images/Sunset.jpg);background-size: cover">
+        <div class="navbar">
+            <div class="dropdown">
+                <button href="login.html" class="dropbtn" onclick="dropDown()" >Account<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="login.html" >Logout</a>
+                <a href="Admin.html" >Admin</a>
+            </div>
+            </div> 
+        </div>
         <br>
         <br>
         <br>
        
-        <main style="background:url(images/Aqua\ Splash.png);background-repeat:no-repeat; background-attachment:fixed; background-size:cover; ">
+        <main >
             <div class="tab">
                 <button class="tablinks" onclick="openSelectedTab(event, 'CHECKOUT')" id="defaultOpen">CHECKOUT</button>
                 <button class="tablinks" onclick="openSelectedTab(event, 'PRODUCTS')">PRODUCTS</button>
                 <button class="tablinks" onclick="openSelectedTab(event, 'SALES')">SALES</button>
             </div>
 
-            <div id="CHECKOUT" class="tabcontent">
-                <h3>CHECKOUT</h3>
-                <p>Product checkout to happen here</p>
+            <div id="CHECKOUT" class="tabcontent" style="background:#afadad">
+                <form>
+                    <div id="myTable">
+                        <table>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Amount</th>
+                            </tr>
+                            <tr>
+                                <td>harddisk</td>
+                                <td>2</td>
+                                <td>500,000/=</td>
+                            </tr>
+                            <tr>
+                                <td>Ethernet Cable</td>
+                                <td>1</td>
+                                <td>350,000/=</td>
+                            </tr>
+                            <tr>
+                                <td>Routers</td>
+                                <td>1</td>
+                                <td>650,000/=</td>
+                            </tr>
+                            <tr>
+                                <td>Printers</td>
+                                <td>3</td>
+                                <td>450,000/=</td>
+                            </tr>
+                            <tr>
+                                <td>Desktop</td>
+                                <td>1</td>
+                                <td>1,200,000/=</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>    
+                    </div>
+                    <br>
+                    <br>
+                    <input type="button" value="Create Record"/>
+                    <input type="button" value="Checkout" style="float:right"/>
+                </form>
             </div>
 
             <div id="PRODUCTS" class="tabcontent">
-                <h3>PRODUCTS</h3>
-                <p>Listing of available products</p>
+                <div class="row">
+                      <div class="col-30">
+                        <label>Filter by:</label>
+                        <select>
+                          <option value="/">Computer Accessories</option>
+                        </select>
+                      </div>
+                  
+                      <div class="col-30">
+                        <label>Sort by:</label>
+                        <select>
+                          <option value="/">In-Stock</option>
+                        </select>
+                      </div>
+                </div>
                 <div class="row">
                     <div class="card">
                         <img src="images/harddisk.png" alt="Avatar" style="width:100%">
@@ -163,6 +225,23 @@
 
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
+        </script>
+        <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function dropDown() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+                
+            // Close the dropdown if the user clicks outside of it
+             window.onclick = function(e) {
+                if (!e.target.matches('.dropbtn')) {
+                    var myDropdown = document.getElementById("myDropdown");
+                        if (myDropdown.classList.contains('show')) {
+                            myDropdown.classList.remove('show');
+                        }
+                    }
+                }
         </script>
     </body>
 </html>
