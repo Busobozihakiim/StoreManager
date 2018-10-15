@@ -1,6 +1,6 @@
 * {
     margin: 0px;
-    padding: 5px;
+    /*padding: 5px;*/
     box-sizing: border-box;
 }
 
@@ -33,7 +33,6 @@ li a:hover:not(.active) {
 /* Style of main */
 main{
     min-width: 320px;
-    background: #fff;
     padding:50px;
     margin: 0 auto;
 }
@@ -42,7 +41,7 @@ main{
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #3399cc;
 }
 
 /* Style the buttons inside the tab */
@@ -216,7 +215,7 @@ input[type="button"] {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;

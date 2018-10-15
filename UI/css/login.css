@@ -39,7 +39,7 @@ input[type="Username"], input[type="password"] {
     font-size: 95%;
     color: #555;
 }
-input[type="button"] {
+input[type="submit"] {
     width: 100%;
     background: #3399cc;
     border: 0;
