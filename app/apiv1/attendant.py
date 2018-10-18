@@ -12,5 +12,15 @@ def getAllProducts():
     else:
         return jsonify(products), 200
 
+@storeManager.route('/api/v1/products/<int:pdct_id>', methods=['GET'])
+def getSingleProduct(pdct_id):
+    """This will return a single product based on its id"""
+    if len(products) != 0:
+        oneproduct = [ oneproduct for oneproduct in products if oneproduct['pdct_id'] == pdct_id]
+        return jsonify({'oneproduct': oneproduct[0]}), 200
+    else:
+        return "No products available",200
+
+
 if __name__ == "__main__":
     storeManager.run(debug=True)
