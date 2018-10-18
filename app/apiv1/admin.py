@@ -28,6 +28,14 @@ def createProduct():
     oneProduct = tempStore()
     oneProduct.add_pdct(captured_data['pdct_name'], captured_data['pdct_quantity'], captured_data['pdct_cost']) 
     return "Product added succesfully",201
+
+@storeManager.route('/api/v1/sales',methods=['GET'])
+def getAllSales():
+    """Returns all Attendant's sales"""
+    if len(sales) == 0:
+        return jsonify("No sales made yet"),200
+    else:
+        return jsonify(sales), 200
     
 if __name__ == "__main__":
     storeManager.run(debug=True)
