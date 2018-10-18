@@ -21,6 +21,13 @@ def getSingleProduct(pdct_id):
     else:
         return "No products available",200
 
-
+@storeManager.route('/api/v1/products', methods=["POST"])
+def createProduct():
+    """Function to create a product """ 
+    captured_data = request.get_json(force=True) 
+    oneProduct = tempStore()
+    oneProduct.add_pdct(captured_data['pdct_name'], captured_data['pdct_quantity'], captured_data['pdct_cost']) 
+    return "Product added succesfully",201
+    
 if __name__ == "__main__":
     storeManager.run(debug=True)
