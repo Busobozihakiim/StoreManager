@@ -21,6 +21,13 @@ def getSingleProduct(pdct_id):
     else:
         return "No products available",200
 
+@storeManager.route('/api/v1/sales', methods=["POST"])
+def createSale():
+    """Function to create a sale """ 
+    captured_data = request.get_json(force=True) 
+    oneSale = tempStore()
+    oneSale.add_sale(captured_data['attendant_name'],captured_data['pdct_name'], captured_data['pdct_quantity'], captured_data['pdct_cost']) 
+    return "Sale record added succesfully",201
 
 if __name__ == "__main__":
     storeManager.run(debug=True)

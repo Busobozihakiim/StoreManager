@@ -16,3 +16,14 @@ class tempStore:
         }
         products.append(product)
         return products
+
+    def add_sale(self, attendant_name, pdct_name, pdct_quantity, pdct_cost):
+        sale = {
+            'sale_id': len(sales) + 1,
+            'attendant_name':attendant_name,
+            'pdct_name' :pdct_name,
+            'pdct_quantity' :pdct_quantity,
+            'pdct_cost' :pdct_cost
+        }
+        sales.append(sale)
+        return sales
