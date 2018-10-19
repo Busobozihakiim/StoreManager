@@ -1,3 +1,3 @@
-#temporary data store
-products = []
-sales = []
+"""temporary data store"""
+PRODUCTS = []
+SALES = []

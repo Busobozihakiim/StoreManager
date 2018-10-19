@@ -1,26 +1,17 @@
-#this is for the admin
-from flask import Flask, request, jsonify
-from tempdata.datamodal import *
+"""this is for the admin"""
+from flask import Flask, jsonify
+from tempdata.datamodal import PRODUCTS
 
-storeManager = Flask(__name__)
+STORE_MANAGER = Flask(__name__)
 
-@storeManager.route('/api/v1/products', methods=['GET'])
-def getAllProducts():
-    """Return all available products"""
-    if len(products) == 0:
-        return jsonify("No products available"),200
-    else:
-        return jsonify(products), 200
-
-@storeManager.route('/api/v1/products/<int:pdct_id>', methods=['GET'])
-def getSingleProduct(pdct_id):
+@STORE_MANAGER.route('/api/v1/products/<int:pdct_id>', methods=['GET'])
+def get_single_product(pdct_id):
     """This will return a single product based on its id"""
-    if len(products) != 0:
-        oneproduct = [ oneproduct for oneproduct in products if oneproduct['pdct_id'] == pdct_id]
+    if PRODUCTS:
+        oneproduct = [oneproduct for oneproduct in PRODUCTS if oneproduct['pdct_id'] == pdct_id]
         return jsonify({'oneproduct': oneproduct[0]}), 200
-    else:
-        return "No products available",200
+    return jsonify("No products available"), 200
 
 
 if __name__ == "__main__":
-    storeManager.run(debug=True)
+    STORE_MANAGER.run(debug=True)
