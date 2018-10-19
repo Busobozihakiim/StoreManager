@@ -36,6 +36,16 @@ def getAllSales():
         return jsonify("No sales made yet"),200
     else:
         return jsonify(sales), 200
+
+@storeManager.route('/api/v1/sales/<int:sale_id>',methods=['GET'])
+def getSaleById(sale_id):
+    """Returns a single sale based on a sale id"""
+    if len(sales) != 0:
+        onesale = [ onesale for onesale in sales if onesale['sale_id'] == sale_id]
+        return jsonify({'onesale': onesale[0]}), 200
+    else:
+        return "No sales available Yet",200
+
     
 if __name__ == "__main__":
     storeManager.run(debug=True)
