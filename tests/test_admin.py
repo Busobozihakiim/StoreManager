@@ -27,7 +27,7 @@ class Testadmin(unittest.TestCase):
             if DATA:
                 self.response = requests.get('http://127.0.0.1:5000/api/v1/products/{}'.format(8))
                 self.assertEqual(self.response.status_code, 200)
-        except IndexError:
+        except:
             self.assertEqual(self.response.status_code, 400)
 
     def test_get_single_sale(self):
