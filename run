@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "To use Admin endpoints enter admin"
+echo "to use Attendant endpoints enter attendant"
+
+admin=admin
+attendant=attendant
+
+read -p "Enter your choice:" input
+
+if [ $input = "admin" ]
+then
+    export FLASK_APP=app/apiv1/admin.py 
+    python3 -m flask run
+elif [ $input = "attendant" ]
+then
+    export FLASK_APP=app/apiv1/attendant.py
+    python3 -m flask run
+else 
+    echo "Check your input"
+fi
